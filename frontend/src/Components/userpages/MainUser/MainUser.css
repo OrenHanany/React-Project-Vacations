@@ -1,0 +1,16 @@
+.MainUser{
+
+}
+.pagination{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: fit-content;
+}
+.Box_main {
+    width: 18em;
+    box-shadow: 1px 1px 1px 1px rgb(187, 179, 179);
+    margin-right: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}

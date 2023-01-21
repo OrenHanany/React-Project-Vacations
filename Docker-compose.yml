@@ -1,0 +1,38 @@
+services:
+  sql-server-db:
+    container_name: sql-server-db
+    image: mysql
+    ports:
+      - "3300:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_USERNAME: "root"
+      MYSQL_ROOT_PASSWORD: "12345678"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - data:/data
+    networks:
+      - vacation-network
+  
+  my-app:
+    container_name: vacation_app
+    image: oren:1.0.0
+    build: 
+      context: my-app
+      # target: production
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8082
+    restart: always
+    networks:
+      - vacation-network
+    depends_on:
+      - sql-server-db
+
+volumes:
+  data: {}
+
+networks:
+  vacation-network:
+    driver: bridge
+  

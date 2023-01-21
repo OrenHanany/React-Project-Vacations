@@ -1,0 +1,35 @@
+.Header {
+	text-align: center;
+   margin: auto;
+   width:max-content; 
+   font-family: cursive;
+}
+.title{
+	text-align: center;
+    justify-content: center;
+    margin: auto;
+    width: fit-content; 
+	font-size:10ch;
+    color:white ;
+	font-family:cursive;
+ }
+ button{
+	margin-top: 10px;
+	margin: 3px;
+	border-top-left-radius : 10%;
+	border-top-right-radius :10%;
+	border-bottom-right-radius : 10%;
+	border-bottom-left-radius : 10%;
+	border-color: rgb(60, 196, 94);
+	background-color:rgb(60, 196, 94);
+	height:	4ch;
+	color:rgb(232, 254, 233) ;
+ }
+ .logout{
+	justify-content: left;
+	float: left;
+	margin-right:0;
+ }
+ .buttons{
+
+ }
