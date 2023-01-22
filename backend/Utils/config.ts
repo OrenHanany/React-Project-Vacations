@@ -1,7 +1,8 @@
 class Config { 
     public port = 3001; 
     // mysql database
-    public mySQLhost = "localhost";
+    public mySQLhost = "sql-server-db";
+    public mySQLport = "8891";
     public mySQLUser = "root";
     public mySQLPassword = "12345678";
     public mySQLdb = "vacation";

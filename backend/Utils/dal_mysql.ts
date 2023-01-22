@@ -1,8 +1,10 @@
-import mysql from "mysql";
+// import mysql from "mysql";
+const mysql2 = require('mysql2');
 import config from "./config";
 
-const connection = mysql.createPool({
+const connection = mysql2.createPool({
     host: config.mySQLhost,
+    port: config.mySQLport,
     user: config.mySQLUser,
     password: config.mySQLPassword,
     database: config.mySQLdb,

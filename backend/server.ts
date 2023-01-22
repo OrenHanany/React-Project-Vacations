@@ -27,9 +27,9 @@ server.use(express.static(path.resolve(__dirname, '../frontend/build')));
 server.use("/user",routeruser);
 server.use("/vacation",routervacation);
 server.use("/like",routerlike);
-server.get('*',ErrorHandler, (req, res) => {
+server.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
   });
-//2server.use("*", ErrorHandler);
+server.use("*", ErrorHandler);
 
 server.listen(currentPort, () => {console.log(`listening on http://localhost:${currentPort}`)} )

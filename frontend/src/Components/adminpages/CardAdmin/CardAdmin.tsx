@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import {useNavigate, useParams} from 'react-router-dom';
 import { store } from "../../../app/store";
-import { edit } from "../../../app/vacation-state";
+import { edit, vacations } from "../../../app/vacation-state";
 import Vacation from "../../../Models/Vacation";
 import "./CardAdmin.css";
 
@@ -36,6 +36,11 @@ function CardAdmin(props :{props1:Vacation}): JSX.Element {
         catch(err: any) {
             console.log(err.message);
         }
+        const url = "http://localhost:3001/vacation/all";
+        axios.get(url)
+       .then((response) => {console.log(response.data);
+        store.dispatch(vacations(response.data));
+       }).catch((error) => {console.log("error", error)});
     }
     
     return (
