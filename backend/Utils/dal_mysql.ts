@@ -16,6 +16,7 @@ console.log("we are connected to the DB");
 const execute = (sql: string): Promise<any> => {
     return new Promise<any>((resolve, reject) => { //to Promisify an asynchronous function
         //execute the sql on mysql server
+        console.log(sql);
         connection.query(sql, (err, result) => {
             //if we got an error, exit with reject and return
             if (err) {

@@ -45,19 +45,12 @@ RUN npm i
 RUN npm run build
 
 WORKDIR /app
-# copy local package.json & package-lock.json into /app
-COPY backend/package*.json /app/backend
 
 
 # Install NPM dependencies & devDependencies
 WORKDIR /app/backend
 
 RUN npm i
-
-# copy project local files (first dot) into /app
-COPY . /app/fronted
-COPY . /app/backend
-COPY . app
 
 # Execute "npm run server" inside /app (workdir) when container starts:
 ENTRYPOINT npm run server

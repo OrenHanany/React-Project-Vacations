@@ -2,15 +2,15 @@ services:
   sql-server-db:
     container_name: sql-server-db
     image: mysql
-    ports:
-      - 8891:3306
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./backend/Utils/init.sql:/data/application/init.sql
     restart: always
     environment:
       MYSQL_ROOT_USERNAME: "root"
       MYSQL_ROOT_PASSWORD: "12345678"
+      MYSQL_ROOT_DARABASE: "vacation"
       ACCEPT_EULA: "Y"
-    volumes:
-      - /tmp/orens_data:/data
   
   my-app:
     container_name: vacation_app
